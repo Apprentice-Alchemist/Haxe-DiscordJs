@@ -40,6 +40,6 @@ extern class GuildMember extends Base implements TextBasedChannel {
 }
 typedef PermissionResolvable= EitherType<EitherType<String,Int>,Array<PermissionResolvable>>;
 typedef PermOpts = {
-	@:optional owner_override:Bool;
-	@:optional admin_override:Bool;
+	@:optional var owner_override:Bool;
+	@:optional var admin_override:Bool;
 }
