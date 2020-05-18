@@ -36,4 +36,10 @@ extern class GuildMember extends Base implements TextBasedChannel {
 	public function startTyping(count:Int):Promise<Void>;
 	public function stopTyping(force:Bool = false):Void;
 	public function bulkDelete(messages:Collection<String, Message>, filter_old:Bool):Promise<Collection<String, Message>>;
+	public function hasPermission(perms:PermissionResolvable,opts:PermOpts):Bool;
+}
+typedef PermissionResolvable= EitherType<EitherType<String,Int>,Array<PermissionResolvable>>;
+typedef PermOpts = {
+	@:optional owner_override:Bool;
+	@:optional admin_override:Bool;
 }
