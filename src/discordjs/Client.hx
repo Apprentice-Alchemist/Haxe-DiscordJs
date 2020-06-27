@@ -9,7 +9,7 @@ extern class Client extends EventEmitter<Client> {
 	/**
 	 * The user the bot is logged in as.
 	 */
-	public var user:User;
+	public var user:ClientUser;
 	/**
 	 * Creates a new client.
 	 * @param options 
