@@ -32,6 +32,7 @@ extern class GuildMember extends Base implements TextBasedChannel {
 	public var displayHexColor:String;
 	public var members:GuildMemberManager;
 	public function kick(reason:String = ''):Promise<GuildMember>;
+	public function ban(reason:String = ''):Promise<GuildMember>;
 	public function send(message:EitherType<String, MessageEmbed> = '', options:MessageOptions = null):Promise<Message>;
 	public function startTyping(count:Int):Promise<Void>;
 	public function stopTyping(force:Bool = false):Void;

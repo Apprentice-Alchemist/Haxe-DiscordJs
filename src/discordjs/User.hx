@@ -19,7 +19,7 @@ extern class User extends Base implements TextBasedChannel {
 	public var lastMessageChannelID:String;
 	public var tag:String;
 	public var username:String;
-
+	public function createDM():Promise<DMChannel>;
 	public function send(message:String = '', options:MessageOptions = null):Promise<Message>;
 	public function startTyping(count:Int):Promise<Void>;
 	public function stopTyping(force:Bool = false):Void;

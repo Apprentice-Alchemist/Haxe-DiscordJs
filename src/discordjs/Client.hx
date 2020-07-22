@@ -6,6 +6,7 @@ import js.node.events.EventEmitter;
 @:jsRequire('discord.js', 'Client')
 extern class Client extends EventEmitter<Client> {
 	public var channels:ChannelManager;
+	public var users:UserManager;
 	/**
 	 * The user the bot is logged in as.
 	 */

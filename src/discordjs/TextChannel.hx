@@ -18,5 +18,6 @@ extern class TextChannel extends GuildChannel implements TextBasedChannel {
 	public function send(message:EitherType<String, MessageEmbed> = '', options:MessageOptions = null):Promise<Message>;
 	public function startTyping(count:Int):Promise<Void>;
 	public function stopTyping(force:Bool = false):Void;
+	@:overload(function(messages:Int,filter_old:Bool):Promise<Collection<String,Message>>{})
 	public function bulkDelete(messages:Collection<String, Message>, filter_old:Bool):Promise<Collection<String, Message>>;
 }
