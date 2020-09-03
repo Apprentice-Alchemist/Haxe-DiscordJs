@@ -2,11 +2,8 @@ package discordjs;
 
 import discordjs.types.MessageOptions;
 import haxe.extern.EitherType;
-import haxe.extern.Rest;
-import js.lib.Promise;
-import js.node.events.EventEmitter;
 
-@:jsRequire('discord.js', 'MessageEmbed')
+@:jsRequire('discord.js', 'RichEmbed')
 extern class MessageEmbed {
 	public var id:String;
 	public var author:User;
@@ -23,22 +20,23 @@ extern class MessageEmbed {
 	public function new();
 	public function addField(name:String, value:String, is_inline:Bool = false):MessageEmbed;
 	public function addFields(value:Rest<EmbedFieldData>):Promise<MessageReaction>;
-	public function setAuthor(name:String, iconURL:String = null, url:String = null):Promise<Array<Message>>;
-	public function setColor(color:ColorResolvable):Promise<Array<Message>>;
+	public function setAuthor(name:String, iconURL:String = null, url:String = null):MessageEmbed;
+	public function setColor(color:ColorResolvable):MessageEmbed;
 	public function setTitle(title:String):MessageEmbed;
 	public function setDescription(description:String):MessageEmbed;
 	public function setFooter(text:String, iconURL:String = null):MessageEmbed;
-	public function setUrl(url:String):MessageEmbed;
+	public function setURL(url:String):MessageEmbed;
 	public function setImage(url:String):MessageEmbed;
 	public function setThumbnail(url:String):MessageEmbed;
 	public function setTimestamp(date:EitherType<Date, Float>):MessageEmbed;
+	public function attachFiles(files:Array<EitherType<FileOptions,EitherType<String,MessageAttachment)>>>):MessageEmbed;
 }
 
 typedef EmbedFieldData = EmbedField;
 
 typedef EmbedField = {
-	@:optional var name:String;
-	@:optional var value:String;
+	var name:String;
+	var value:String;
 }
 
 typedef MessageEmbedFooter = {
