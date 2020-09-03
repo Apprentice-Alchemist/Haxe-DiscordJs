@@ -19,7 +19,7 @@ extern class MessageEmbed {
 	public var url:String;
 	public function new();
 	public function addField(name:String, value:String, is_inline:Bool = false):MessageEmbed;
-	public function addFields(value:Rest<EmbedFieldData>):Promise<MessageReaction>;
+	public function addFields(value:Rest<EmbedFieldData>):MessageEmbed;
 	public function setAuthor(name:String, iconURL:String = null, url:String = null):MessageEmbed;
 	public function setColor(color:ColorResolvable):MessageEmbed;
 	public function setTitle(title:String):MessageEmbed;
@@ -29,7 +29,7 @@ extern class MessageEmbed {
 	public function setImage(url:String):MessageEmbed;
 	public function setThumbnail(url:String):MessageEmbed;
 	public function setTimestamp(date:EitherType<Date, Float>):MessageEmbed;
-	public function attachFiles(files:Array<EitherType<FileOptions,EitherType<String,MessageAttachment)>>>):MessageEmbed;
+	public function attachFiles(files:Array<EitherType<FileOptions,EitherType<String,Dynamic>>>):MessageEmbed;
 }
 
 typedef EmbedFieldData = EmbedField;
